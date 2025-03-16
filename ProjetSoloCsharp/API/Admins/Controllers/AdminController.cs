@@ -19,7 +19,6 @@ public class AdminController : ControllerBase
     }
     
     [AllowAnonymous]
-    [Authorize]
     [HttpPost("register")]
     public async Task<ActionResult<ReturnAdminDto>> RegisterCustomer(RegisterDto registerDto)
     {
