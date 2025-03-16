@@ -26,6 +26,7 @@ public static class SiteExtensions
         return new ReturnSiteDto()
         {
             Ville = site.Ville,
+            VilleID = site.Id
         };
     }
 }

@@ -13,6 +13,7 @@ public class SiteRepositories : BaseRepository<Site>, ISiteRepositories
     {
     }
 
+    //getall qui renvoie tout les sites
     public Task<List<ReturnSiteDto>> GetAll(CancellationToken cancellationToken = default)
     {
         var sites =  _context.Sites.Select(site => new ReturnSiteDto()

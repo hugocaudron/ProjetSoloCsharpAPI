@@ -6,5 +6,5 @@ namespace ProjetSoloCsharp.API.Sites.Repositories;
 
 public interface ISiteRepositories : IBaseRepository<Site>
 {
-    Task<List<ReturnSiteDto>> GetAll(CancellationToken cancellationToken = default);
+    Task<List<ReturnSiteDto>> GetAll(CancellationToken cancellationToken = default); //getall qui revoie tout les sites 
 }

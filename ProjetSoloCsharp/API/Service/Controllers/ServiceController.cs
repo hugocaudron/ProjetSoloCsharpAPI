@@ -22,7 +22,9 @@ public class ServiceController : ControllerBase
     }
     
     [HttpPost]
-    [Authorize]
+    [Authorize]//besoins du token 
+    
+    //controller ajout 
     public async Task<ActionResult<Models.Service?>> AddService([FromBody] CreateServiceDto createServiceDto)
     {
         var serviceToAdd = createServiceDto.MapToServiceModel();
@@ -32,6 +34,8 @@ public class ServiceController : ControllerBase
     
     [HttpDelete("{id}")]
     [Authorize]
+    
+    //controller delete
     public async Task<IActionResult> DeleteService([FromRoute] int id)
     {
         var isDeleted = await _serviceServices.DeleteServiceAsync(id);
@@ -40,11 +44,13 @@ public class ServiceController : ControllerBase
     
     [HttpPut("{id}")]
     [Authorize]
+    
+    //controller update
     public async Task<IActionResult> UpdateService([FromRoute] int id, [FromBody] UpdateServiceDto updateServiceDto)
     {
         var serviceToUpdate = updateServiceDto.MapToServiceModel();
 
-        var isAdded = await _serviceServices.UpdateServiceAsync(id, serviceToUpdate, updateServiceDto.IdSites);
+        var isAdded = await _serviceServices.UpdateServiceAsync(id, serviceToUpdate);
 
         return Ok(isAdded);
     }
@@ -52,6 +58,8 @@ public class ServiceController : ControllerBase
     
     [HttpGet("{id}")]
     [Authorize]
+    
+    //controller trouvé par id 
     public async Task<IActionResult> FindServiceById([FromRoute] int id)
     {
         var service = await _serviceServices.GetServiceByIdAsync(id);
@@ -59,6 +67,8 @@ public class ServiceController : ControllerBase
     }
 
     [HttpGet]
+    
+    //controller tout avoir
     public async Task<IActionResult> GetAllServiceAsync()
     {
         var sites = await _serviceServices.GetAllServiceAsync();

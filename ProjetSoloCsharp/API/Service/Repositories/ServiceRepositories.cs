@@ -12,13 +12,13 @@ public class ServiceRepositories : BaseRepository<Models.Service>, IServiceRepos
     {
     }
     
+    //avoir tout les serice
     public Task<List<ReturnServiceDto>> GetAll(CancellationToken cancellationToken = default)
     {
         var services =  _context.Services.Select(service => new ReturnServiceDto()
         {
             Service = service.Service1,
             IdService = service.Id,
-            IdSites = service.IdSites,
         }).ToListAsync();
         return services;
     }

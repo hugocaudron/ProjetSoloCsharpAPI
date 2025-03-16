@@ -10,7 +10,6 @@ public static class ServiceExtensions
         return new Models.Service()
         {
             Service1 = createServiceDto.Service,
-            IdSites = createServiceDto.IdSites,
         };
     }
 
@@ -19,7 +18,6 @@ public static class ServiceExtensions
         return new Models.Service()
         {
             Service1 = updateServiceDto.Service,
-            IdSites = updateServiceDto.IdSites,
         };
     }
     
@@ -28,6 +26,7 @@ public static class ServiceExtensions
         return new ReturnServiceDto()
         {
             Service = service.Service1,
+            IdService = service.Id,
         };
     }
 }

@@ -5,8 +5,6 @@ namespace ProjetSoloCsharp.API.Service.DTOs;
 public class ReturnServiceDto
 {
     public int IdService { get; set; }
-    
-    public int IdSites { get; set; }
 
     [Required]
     [StringLength(255)]

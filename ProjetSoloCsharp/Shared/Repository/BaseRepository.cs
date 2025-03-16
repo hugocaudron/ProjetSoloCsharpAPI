@@ -65,11 +65,6 @@ public class BaseRepository<TModel> : IBaseRepository<TModel> where TModel : cla
         return await _context.Set<TModel>().Where(predicate).CountAsync(cancellationToken);
     }
 
-    //public virtual async Task<int> CountAsync(CancellationToken cancellationToken = default)
-    //{
-    //    return await _context.Set<TModel>().CountAsync(cancellationToken);
-    //}
-
     public virtual async Task<TModel?> FirstOrDefaultAsync(Expression<Func<TModel, bool>> predicate, CancellationToken cancellationToken = default)
     {
         return await _context.Set<TModel>().FirstOrDefaultAsync(predicate, cancellationToken);

@@ -5,10 +5,9 @@ namespace ProjetSoloCsharp.API.Admins.Services;
 
 public interface IAdminServices
 {
-    Task<ReturnAdminDto> RegisterAdmin(RegisterDto registerDto);
+    Task<ReturnAdminDto> RegisterAdmin(RegisterDto registerDto); //ajouter un admin
     
-    Task<string> LogAdmin(LoginDto loginDto);
+    Task<string> LogAdmin(LoginDto loginDto); //se connecter 
     
-    //Task DeleteAdmin(int Id);
 
 }

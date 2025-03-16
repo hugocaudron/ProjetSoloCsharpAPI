@@ -22,8 +22,10 @@ public class SiteController : ControllerBase
         _siteServices = siteServices;
     }
     
-    [Authorize]
-    [HttpPost]
+    [Authorize]//besoins du token pour pouvoir le faire 
+    [HttpPost]//Post 
+    
+    //controller ajout site 
     public async Task<ActionResult<Site?>> AddSite([FromBody] CreateSiteDto createSiteDto)
     {
         var siteToAdd = createSiteDto.MapToSiteModel();
@@ -33,6 +35,8 @@ public class SiteController : ControllerBase
     
     [Authorize]
     [HttpPut("{id}")]
+    
+    //controller modification 
     public async Task<IActionResult> UpdateSite([FromRoute] int id, [FromBody] UpdateSiteDto updateSiteDto)
     {
         var siteToUpdate = updateSiteDto.MapToSiteModel();
@@ -42,6 +46,8 @@ public class SiteController : ControllerBase
     
     [Authorize]
     [HttpDelete("{id}")]
+    
+    //controller suppression
     public async Task<IActionResult> DeleteSite([FromRoute] int id)
     {
         var isDeleted = await _siteServices.DeleteSiteAsync(id);
@@ -50,13 +56,19 @@ public class SiteController : ControllerBase
     
     [Authorize]
     [HttpGet("{id}")]
+    
+    //controller trouvé par son id 
     public async Task<IActionResult> FindSiteById([FromRoute] int id)
     {
         var site = await _siteServices.GetSiteByIdAsync(id);
         return Ok(site);
     }
     
+    
+    //pas de [Authirize] car un visiteur peu le faire 
     [HttpGet]
+    
+    //controller tout avoir 
     public async Task<IActionResult> GetAllSiteAsync()
     {
         var sites = await _siteServices.GetAllSiteAsync();

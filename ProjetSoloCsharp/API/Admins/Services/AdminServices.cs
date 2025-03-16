@@ -17,17 +17,19 @@ public class AdminServices : IAdminServices
     
     public AdminServices(IAdminRepository adminRepository)
     {
-        _adminRepository = adminRepository;
+        _adminRepository = adminRepository; //repo admin
     }
     
+    
+    //ajoue d'un admin
     public async Task<ReturnAdminDto> RegisterAdmin(RegisterDto registerDto)
     {
-        if (await _adminRepository.AnyAsync(u => u.Email == registerDto.Email))
+        if (await _adminRepository.AnyAsync(u => u.Email == registerDto.Email)) //vérifie si l'email n'existe pas
             throw new ArgumentException("Email already exists");
 
         var admin = registerDto.MapToAdminModel();
 
-        var hashedPassword = PasswordUtils.HashPassword(registerDto.Password, out var salt);
+        var hashedPassword = PasswordUtils.HashPassword(registerDto.Password, out var salt); //hash le mot de passe
         admin.PasswordHash = hashedPassword;
         admin.PasswordSalt = Convert.ToBase64String(salt);
         
@@ -37,17 +39,19 @@ public class AdminServices : IAdminServices
         return newAdminDetails.MapToReturnModel();
     }
     
+    
+    //se connecter
      public async Task<string> LogAdmin(LoginDto loginDto)
         {
             var foundAdmin = await _adminRepository
-                .FirstOrDefaultAsync(a => a.Email == loginDto.Email)?? throw new KeyNotFoundException("Utilisateur introuvable");
+                .FirstOrDefaultAsync(a => a.Email == loginDto.Email)?? throw new KeyNotFoundException("Admin introuvable"); //vérifie si l'admin existe
             
-            var passwordValid = PasswordUtils.VerifyPassword(
+            var passwordValid = PasswordUtils.VerifyPassword( //vérification du mot de passe 
                 loginDto.Password,
                 foundAdmin.PasswordHash,
                 Convert.FromBase64String(foundAdmin.PasswordSalt)
             );
-            if (!passwordValid) throw new Exception("mauvaismdp");
+            if (!passwordValid) throw new Exception("mauvais mot de passe");
             // Faire une liste de Claims 
             List<Claim> claims = new List<Claim>
             {

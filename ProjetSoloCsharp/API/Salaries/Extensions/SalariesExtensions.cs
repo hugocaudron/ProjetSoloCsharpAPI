@@ -18,6 +18,23 @@ public static class SalariesExtensions
             IdSite = createSalariesDto.IdSite,
         };
     }
+    
+    public static ReturnSalariesDto MapToReturnModel(this Salarié salarié)
+    {
+        return new ReturnSalariesDto()
+        {
+            IdSalary = salarié.Id,
+            Email = salarié.Email,
+            Nom = salarié.Nom,
+            Prénom = salarié.Prénom,
+            TelFixe = salarié.TelFixe,
+            TelPortable = salarié.TelPortable,
+            IdServices = salarié.IdServices,
+            IdSite = salarié.IdSite,
+        };
+    }
+    
+    
 
     public static Salarié MapToSalariesModel(this UpdateSalariesDto updateSalariesDto)
     {

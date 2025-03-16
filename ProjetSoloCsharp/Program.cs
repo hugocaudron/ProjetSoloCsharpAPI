@@ -9,6 +9,7 @@ builder.InjectDependencies();
 
 var app = builder.Build();
 
+app.UseCors("AllowReactApp");
 
 // Configurer le pipeline HTTP.
 if (app.Environment.IsDevelopment())
@@ -24,5 +25,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();

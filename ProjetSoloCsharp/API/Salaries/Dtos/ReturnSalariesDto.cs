@@ -1,4 +1,6 @@
 using System.ComponentModel.DataAnnotations;
+using ProjetSoloCsharp.API.Service.DTOs;
+using ProjetSoloCsharp.API.Sites.DTOs;
 
 namespace ProjetSoloCsharp.API.Salaries.Dtos;
 
@@ -27,4 +29,8 @@ public class ReturnSalariesDto
     public int IdServices { get; set; }
     
     public int IdSalary { get; set; }
+    
+    public ReturnSiteDto? Site { get; set; }
+    
+    public ReturnServiceDto? Service { get; set; }
 }

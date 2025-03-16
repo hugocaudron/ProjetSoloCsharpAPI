@@ -6,6 +6,8 @@ namespace ProjetSoloCsharp.API.Service.Repositories;
 
 public interface IServiceRepositories : IBaseRepository<Models.Service>
 {
+    
+    //getall interface
     Task<List<ReturnServiceDto>> GetAll(CancellationToken cancellationToken = default);
 
 }

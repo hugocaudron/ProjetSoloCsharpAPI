@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/hugo/Documents/Dev/Projet perso C#/ProjetSoloCsharp/ProjetSoloCsharp/ProjetSoloCsharp.csproj": {}
+    "/Users/hugo/Documents/Dev/ProjetSoloCsharp/ProjetSoloCsharp/ProjetSoloCsharp/ProjetSoloCsharp.csproj": {}
   },
   "projects": {
-    "/Users/hugo/Documents/Dev/Projet perso C#/ProjetSoloCsharp/ProjetSoloCsharp/ProjetSoloCsharp.csproj": {
+    "/Users/hugo/Documents/Dev/ProjetSoloCsharp/ProjetSoloCsharp/ProjetSoloCsharp/ProjetSoloCsharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hugo/Documents/Dev/Projet perso C#/ProjetSoloCsharp/ProjetSoloCsharp/ProjetSoloCsharp.csproj",
+        "projectUniqueName": "/Users/hugo/Documents/Dev/ProjetSoloCsharp/ProjetSoloCsharp/ProjetSoloCsharp/ProjetSoloCsharp.csproj",
         "projectName": "ProjetSoloCsharp",
-        "projectPath": "/Users/hugo/Documents/Dev/Projet perso C#/ProjetSoloCsharp/ProjetSoloCsharp/ProjetSoloCsharp.csproj",
+        "projectPath": "/Users/hugo/Documents/Dev/ProjetSoloCsharp/ProjetSoloCsharp/ProjetSoloCsharp/ProjetSoloCsharp.csproj",
         "packagesPath": "/Users/hugo/.nuget/packages/",
-        "outputPath": "/Users/hugo/Documents/Dev/Projet perso C#/ProjetSoloCsharp/ProjetSoloCsharp/obj/",
+        "outputPath": "/Users/hugo/Documents/Dev/ProjetSoloCsharp/ProjetSoloCsharp/ProjetSoloCsharp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/hugo/.nuget/NuGet/NuGet.Config"

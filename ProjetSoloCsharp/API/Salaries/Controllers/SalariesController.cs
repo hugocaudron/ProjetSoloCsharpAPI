@@ -15,11 +15,13 @@ public class SalariesController : ControllerBase
 
     public SalariesController(ISalariesServices salariesServices)
     {
-        _salariesServices = salariesServices;
+        _salariesServices = salariesServices; //repo salarie
     }
     
     [HttpPost]
-    [Authorize]
+    [Authorize]//besoins du token 
+    
+    //ajout d'un salarié
     public async Task<ActionResult<Salarié?>> AddSalaries([FromBody] CreateSalariesDto createSalariesDto)
     {
         var salariesToAdd = createSalariesDto.MapToSalariesModel();
@@ -29,17 +31,21 @@ public class SalariesController : ControllerBase
     
     [HttpPut("{id}")]
     [Authorize]
+    
+    //modification d'un salarié
     public async Task<IActionResult> UpdateSalaries([FromRoute] int id, [FromBody] UpdateSalariesDto updateSalariesDto)
     {
         var salariesToUpdate = updateSalariesDto.MapToSalariesModel();
 
-        var isAdded = await _salariesServices.UpdateSalariesAsync(id, salariesToUpdate, updateSalariesDto.IdServices, updateSalariesDto.IdSite);
+        var isAdded = await _salariesServices.UpdateSalariesAsync(id, salariesToUpdate, updateSalariesDto.IdSite, updateSalariesDto.IdServices);
 
         return Ok(isAdded);
     }
     
     [HttpDelete("{id}")]
     [Authorize]
+    
+    //suppression d'un salarié
     public async Task<IActionResult> DeleteSalaries([FromRoute] int id)
     {
         var isDeleted = await _salariesServices.DeleteSalariesAsync(id);
@@ -47,6 +53,8 @@ public class SalariesController : ControllerBase
     }
     
     [HttpGet]
+    
+    //avoir tout les salariés
     public async Task<IActionResult> GetAllSalariesAsync()
     {
         var salaries = await _salariesServices.GetAllSalariesAsync();
@@ -55,6 +63,8 @@ public class SalariesController : ControllerBase
     
     [HttpGet("{id}")]
     [Authorize]
+    
+    //trouvé un salarié par son id 
     public async Task<IActionResult> FindSalariesById([FromRoute] int id)
     {
         var salarie = await _salariesServices.GetSalariesByIdAsync(id);
