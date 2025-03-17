@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjetSoloCsharp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54efc9aaa7c1b66dbe5ff561b8d670f1f772c369")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d73d9959a18b7ac51cd30869a7dafae29d1990df")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjetSoloCsharp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjetSoloCsharp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

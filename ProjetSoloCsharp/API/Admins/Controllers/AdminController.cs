@@ -19,6 +19,7 @@ public class AdminController : ControllerBase
     }
     
     [AllowAnonymous]
+    //[Authorize] enlever le commentaire une fois le première admin créer
     [HttpPost("register")]
     public async Task<ActionResult<ReturnAdminDto>> RegisterCustomer(RegisterDto registerDto)
     {
